@@ -2,23 +2,19 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
+const App = () => {
+  // API Key and ID for authentication - Using Edamam API
+  const APP_ID = '34dbba8e';
+  const APP_KEY = 'b0aa05f1aae9243e6eef83c2f1c4374a';
+
+  const exampleReq = `https://api.edamam.com/search?q=chicken&app_id=${APP_ID}&app_key=${APP_KEY}`;
+
+  return(
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <form className="search-form">
+        <input className="search-bar" type="text"/>
+        <button className="search-button" type="submit">Search</button>
+      </form>
     </div>
   );
 }
